@@ -36,19 +36,20 @@ function creerGestionnaire (){
          this.taches.forEach((tache, i) => {
             const statut = tache.terminee ? "[✔️]" : "[❌]";
             console.log(`${i}. ${statut} ${tache.description}`);
-       }
-    }, 
+       });
+       }, 
   };
 };
 
 console.log("Création du gestionnaire de tâches\n");
 const gestionnaire = creerGestionnaire();
 
-console.log("=== Ajout de tâches ===\n");
-gestionnaire.ajouterTaches("Apprendre JavaScript");
-gestionnaire.ajouterTaches("Faire les exercices du TP5");
-gestionnaire.ajouterTaches("Créer un projet personnel");
-gestionnaire.ajouterTaches("Réviser les concepts de base");
+
+
+gestionnaire.ajouterTache("Apprendre JavaScript");
+gestionnaire.ajouterTache("Faire les exercices du TP5");
+gestionnaire.ajouterTache("Créer un projet personnel");
+gestionnaire.ajouterTache("Réviser les concepts de base");
 
 //afficher toutes les tâches
 
