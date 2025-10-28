@@ -10,4 +10,3 @@ function array(test) {
 console.log(array(array1));
 console.log(array(array2));
 console.log(array(array3));
-
