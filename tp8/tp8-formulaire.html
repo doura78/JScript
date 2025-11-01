@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tp8-formulaire.js" defer></script>
+</head>
+<body>
+    <h1>Formulaire d'inscription</h1>
+    <fieldset>
+        <legend>Renseignement</legend>
+        <form id="formulaire" method="post">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom"><br>
+
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom"><br>
+
+            <label for="dateDenNissance">Date de naissance</label>
+            <input type="date" id="date" name="dateNaissance"><br>
+
+            <button type="button" onclick= "validerFormulaire()">Valider</button>
+        </form>
+    <div id="messageError"  classe="Le formulaire ne peut pas être vide" style="background-color: red;"></div>
+    <span id="resultat"></span>
+    </fieldset>
+</body>
+</html>
