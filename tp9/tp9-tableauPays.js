@@ -1,0 +1,64 @@
+    fetch('https://digicode.cleverapps.io/json/pays/pollution')
+    .then(function(res) {
+        return res.json();
+    }
+)
+
+.then(function(json){
+    console.log(json)
+    initialiserDonnees(json)
+}
+); 
+
+
+function initialiserDonnees() {
+  let data = {
+    polluant: "CO2",
+    unite: "milliards de tonnes",
+    annee: 2017,
+    pays: [
+      { nom: "Chine", valeur: 9.26, pourcentage: 28.2, code: "cn" },
+      { nom: "Etats-Unis", valeur: 4.76, pourcentage: 14.5, code: "us" },
+      { nom: "Inde", valeur: 2.16, pourcentage: 6.6, code: "in" },
+      { nom: "Russie", valeur: 1.54, pourcentage: 4.7, code: "ru" },
+      { nom: "Japon", valeur: 1.13, pourcentage: 3.4, code: "jp" },
+      { nom: "Allemagne", valeur: 0.72, pourcentage: 2.2, code: "de" },
+      { nom: "Corée du Sud", valeur: 0.6, pourcentage: 1.8, code: "kr" },
+      { nom: "Iran", valeur: 0.57, pourcentage: 1.7, code: "ir" },
+      { nom: "Canada", valeur: 0.55, pourcentage: 1.7, code: "ca" },
+    ],
+  };
+
+
+ titreElement = document.querySelector('#titre');
+ anneeElement = document.querySelector('#annee');
+ listePaysElement = document.querySelector("#listePays");
+// Mise à jour des balises h1 et h2
+
+titreElement = `${data.polluant} (${data.unite})`;
+titreElement = `Annee : ${data.annee}`;
+
+// Remplissage du tableau
+      let tbody = document.getElementById("corps");
+      data.pays.forEach(p => {
+        let tr = document.createElement("tr");
+
+        // Colonne Nom + Drapeau
+        let tdNom = document.createElement("td");
+        tdNom.innerHTML = `<img src="https://flagcdn.com/24x18/${p.code}.png" alt="${p.nom}"> ${p.nom}`;
+        tr.appendChild(tdNom);
+
+        // Colonne Valeur
+        let tdValeur = document.createElement("td");
+        tdValeur.textContent = p.valeur;
+        tr.appendChild(tdValeur);
+
+        // Colonne Pourcentage
+        let tdPourcentage = document.createElement("td");
+        tdPourcentage.textContent = p.pourcentage + " %";
+        tr.appendChild(tdPourcentage);
+
+        tbody.appendChild(tr);
+      });
+    };
+

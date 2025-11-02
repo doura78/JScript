@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affichage Données</title>
+    <script src="tp9-affichagePaysInfos.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .country {
+        border: 1px solid #000000;
+        padding: 10px;
+        margin: 10px;
+      }
+      img {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body onclick="chargerDonnes()">
+    <h1>Information démographique par pays</h1>
+
+    <span id="resultat"></span>
+    <table>
+      <thead>
+        <tr>
+          <th>Capitale</th>
+          <th>Population</th>
+          <th>Région</th>
+        </tr>
+      </thead>
+
+      <tbody id="corps"></tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pays et capitale</title>
+    <script src="tp9-affichagePaysInfos.js" defer></script>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+    .fa-sort, .fa-sort-up, .fa-sort-down {
+      margin-left: 5px;
+      color: #555;
+    }
+  </style>
+</head>
+<body onload="chargerDonnees()">
+     <h1>Liste des pays</h1>
+  <div id="resultat">Chargement</div>
+</body>
+</html>
